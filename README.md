@@ -1,2 +1,1 @@
-# algorithm
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+자바스크립트의 내장된 문법을 적절히 사용하여 문제 해결 능력을 기르기 위해 거르지 말고 훈련한다.
