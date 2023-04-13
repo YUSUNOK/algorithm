@@ -1,7 +1,5 @@
 function solution(my_string, n) {
     var answer = '';
-    for(let i = 0; i < my_string.length ; i++){
-        answer += my_string[i].repeat(n);
-    }
+ [...my_string].map(x => answer+=x.repeat(n)) ;
     return answer;
 }
