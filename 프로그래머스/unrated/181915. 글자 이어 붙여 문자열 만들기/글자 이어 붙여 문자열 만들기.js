@@ -1,5 +1,3 @@
 function solution(my_string, index_list) {
-    let answer = "";
-    index_list.forEach(x => answer+=my_string[x]);
-    return answer;
+    return index_list.map(x => my_string[x]).join("");
 }
