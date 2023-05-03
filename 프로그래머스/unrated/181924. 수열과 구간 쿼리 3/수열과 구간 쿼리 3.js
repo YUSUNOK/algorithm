@@ -1,8 +1,6 @@
 function solution(arr, queries) {
     for(let [i, j] of queries){
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
 }
