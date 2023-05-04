@@ -1,3 +1,3 @@
 function solution(number) {
-    return [...number].map(x => Number(x)).reduce((prev, curr) => prev + curr) % 9;
+    return [...number].reduce((prev, curr) => Number(prev) + Number(curr)) % 9;
 }
