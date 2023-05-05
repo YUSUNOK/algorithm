@@ -1,7 +1,4 @@
 function solution(arr, intervals) {
-    var answer = [];
-    for(let [startIndex, endIndex] of intervals){
-        answer = answer.concat(arr.slice(startIndex, endIndex + 1));
-    }
-    return answer;
+   const [[a1, b1],[a2, b2]] = intervals;
+    return [ ...arr.slice(a1, b1+1), ...arr.slice(a2, b2+1)];
 }
