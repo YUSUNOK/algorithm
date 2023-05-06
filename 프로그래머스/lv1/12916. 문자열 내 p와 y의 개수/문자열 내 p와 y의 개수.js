@@ -8,5 +8,5 @@ function solution(s){
             countObj['y'] =  (countObj['y'] || 0) + 1;
         }
     }  
-    return countObj['p'] === countObj['y'] ? true : false;
+    return countObj['p'] === countObj['y'];
 }
