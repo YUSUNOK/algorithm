@@ -1,0 +1,47 @@
+Frequency Counter - validAnagram
+Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+Examples:
+
+validAnagram('', '') // true
+validAnagram('aaz', 'zza') // false
+validAnagram('anagram', 'nagaram') // true
+validAnagram("rat","car") // false) // false
+validAnagram('awesome', 'awesom') // false
+validAnagram('amanaplanacanalpanama', 'acanalmanplanpamana') // false
+validAnagram('qwerty', 'qeywrt') // true
+validAnagram('texttwisttime', 'timetwisttext') // true
+Note: You may assume the string contains only lowercase alphabets.
+
+Time Complexity - O(n)
+
+---------
+
+function validAnagram(str1, str2){
+ const countMap1 = new Map();
+ const countMap2 = new Map();
+ 
+ for(let str of str1) {
+    if(!countMap1.get(str)) {
+        countMap1.set(str, 1);
+    }else{
+        countMap1.set(str, countMap1.get(str) + 1);
+    }
+ }
+ 
+  for(let str of str2) {
+    if(!countMap2.get(str)) {
+        countMap2.set(str, 1);
+    }else{
+        countMap2.set(str, countMap2.get(str) + 1);
+    }
+ }
+ 
+ if(countMap1.size !== countMap2.size) return false;
+ 
+ for(let [key, value] of countMap1) {
+     if(!countMap2.has(key)) return false;
+     if(countMap2.get(key) !== value) return false;
+ }
+ return true;
+}
