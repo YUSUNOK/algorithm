@@ -1,5 +1,5 @@
 function factorial(n) {
-    if( n === 1 || n === 0 ) return 1;
+    if(n === 0) return 1;
     return n * factorial(n-1);
 }
 
@@ -9,5 +9,5 @@ function solution(balls, share) {
     for(let i = 0 ; i< share ; i++){
         p *= (balls - i);
     }
-    return Math.ceil(p / factorial(share));
+    return Math.round(p / factorial(share));
 }
