@@ -1,17 +1,7 @@
 function solution(id_pw, db) {
-    let idIncludeCheck = false;
-    for(let [id, pw] of db) {
-        if(id_pw[0] === id && id_pw[1] === pw) {
-            return "login";
-        }
-        if(id_pw[0] === id){
-            idIncludeCheck = true;
-        }
+    const dbMap = new Map(db);
+    if(dbMap.has(id_pw[0]) && dbMap.get(id_pw[0]) === id_pw[1]){
+        return "login";
     }
-    
-    if(idIncludeCheck){
-        return "wrong pw";
-    }else{
-        return "fail";
-    }
+    return dbMap.has(id_pw[0]) ? "wrong pw" : "fail";
 }
