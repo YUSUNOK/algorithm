@@ -1,26 +1,22 @@
 function solution(a, b, c, d) {
-    const inputList = [a,b,c,d];
-    const obj = {};
-    for(let item of inputList) {
-        obj[item] = ( obj[item] || 0) + 1;
+   const map1 = new Map();
+    for(data of [a,b,c,d]){
+        map1.set(data, (map1.get(data) || 0) + 1);
     }
-    if(Object.entries(obj).length === 1){
-        return 1111 * Object.entries(obj)[0][0];
+    if(map1.size === 4) return [...map1].sort((x,y) => x[0]-y[0])[0][0];
+    if(map1.size === 1) return [...map1][0][0] * 1111;
+    if(map1.size === 3) return [...map1].map(([x, y]) => y === 1 ? x : null).filter(x => x).reduce((prev, curr) => prev * curr);
+    const findValue3 = [...map1].map(([x, y]) => y).indexOf(3);
+    if(findValue3 === -1) {
+       return [...map1].map(([x, y]) => x).reduce((prev, curr) => prev + curr) * Math.abs([...map1].map(([x, y]) => x).reduce((prev, curr) => prev - curr))
     }
-    if(Object.entries(obj).length === 4){
-        return Math.min(...Object.keys(obj));
-    }
-    if(Object.entries(obj).length === 3){
-      return Object.entries(obj).filter(([x, y]) => y !==2).map(([x, y]) => Number(x)).reduce((prev, curr) => prev * curr);
-    }
+    let answer = 0;
+    [...map1].forEach((x, i) => i === findValue3 ? answer += 10 * x[0] : answer += x[0]);
+    return answer ** 2;
     
-    if(Object.values(obj).includes(3)){
-        for(let [i,j] of Object.entries(obj)) {
-            if(j === 3) {
-              return (10 * Number(i) +  Number(Object.keys(obj).filter(x => x !== i)[0])) ** 2;
-            }
-        }
-    }
+   
     
-    return Object.keys(obj).reduce((prev, curr) => Number(prev) + Number(curr), 0) * Math.abs(Object.keys(obj).reduce((prev, curr) => prev - curr))
+    
+        
+    
 }
