@@ -8,5 +8,3 @@ function solution(babbling) {
     }
     return babbling.filter((x) => x.replaceAll('+','') === '').length;
 }
-  
-    
