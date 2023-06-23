@@ -1,4 +1,1 @@
-function solution(age) {
-    var answer = 2022 +1 -age ;
-    return answer;
-}
+const solution = (age) => 2022 - age + 1;
