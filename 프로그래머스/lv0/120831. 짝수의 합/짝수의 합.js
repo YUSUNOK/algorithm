@@ -1,7 +1,6 @@
-function solution(n) {
-    var answer = 0;
-    for(let i =2 ; i<= n ; i +=2){
-        answer += i;
-    }
-    return answer;
+const solution = (n) => {
+    const arrLength = Math.trunc(n/2) + 1;
+    return Array(arrLength)
+            .fill(0).map((x, i) => 2*i)
+            .reduce((prev, curr) => prev + curr);
 }
