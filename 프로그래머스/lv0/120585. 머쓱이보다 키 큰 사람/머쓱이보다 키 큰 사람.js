@@ -1,5 +1,4 @@
-function solution(array, height) {
-   
-    var answer =  array.filter((item) => item > height).length;
-    return answer;
-}
+const solution = (array, height) => 
+    array
+    .filter((heightOfFriend) => heightOfFriend > height)
+    .length;
