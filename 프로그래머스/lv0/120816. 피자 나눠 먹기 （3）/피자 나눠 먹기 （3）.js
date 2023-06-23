@@ -1,2 +1,1 @@
-const solution = (slice, n) => 
-    n % slice === 0 ? Math.trunc(n/slice) : Math.trunc(n/slice) + 1;
+const solution = (slice, n) => Math.ceil(n/slice);
