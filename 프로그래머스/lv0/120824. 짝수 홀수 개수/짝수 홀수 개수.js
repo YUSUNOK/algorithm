@@ -1,5 +1,6 @@
-function solution(num_list) {
-    var answer = Array(2).fill(0);
-    num_list.forEach(x => x % 2 === 0 ? answer[0]+=1 : answer[1]+=1);
-    return answer;
+const solution = (num_list) => {
+    let result = [0,0];
+    num_list
+    .map(x => x % 2 === 0 ? result[0] += 1 : result[1]+= 1);
+    return result;
 }
