@@ -1,5 +1,2 @@
-function solution(my_string, n) {
-    var answer = '';
- [...my_string].map(x => answer+=x.repeat(n)) ;
-    return answer;
-}
+const solution = (my_string, n) => 
+    [...my_string].reduce((prev, curr) => prev + curr.repeat(n),'');
