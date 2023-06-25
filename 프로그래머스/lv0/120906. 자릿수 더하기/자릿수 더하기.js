@@ -1,3 +1,1 @@
-function solution(n) {
-    return [...String(n)].map(x => Number(x)).reduce((prev, curr) => prev + curr);
-}
+const solution = (n) => String(n).split('').reduce((prev, curr) => {return prev + Number(curr)}, 0);
