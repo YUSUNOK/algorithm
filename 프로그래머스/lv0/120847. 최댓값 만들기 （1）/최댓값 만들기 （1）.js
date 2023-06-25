@@ -1,5 +1,4 @@
-function solution(numbers) {
-    var answer = 0;
-     answer = numbers.sort((a,b) => a - b)[numbers.length - 1] * numbers[numbers.length - 2];
-    return answer;
+const solution = (numbers) => {
+    numbers.sort((x,y) => y-x);
+    return numbers[0] * numbers[1];
 }
