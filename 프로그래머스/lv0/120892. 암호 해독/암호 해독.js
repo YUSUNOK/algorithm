@@ -1,8 +1,1 @@
-function solution(cipher, code) {
-    var answer = "";
-    const n = ~~(cipher.length / code);
-    for(let i = 1; i <= n ; i++){
-        answer += cipher[code * i -1];
-    }
-    return answer;
-}
+const solution = (cipher, code) => [...cipher].filter((_, i)=> (i+1) % code === 0).join('');
