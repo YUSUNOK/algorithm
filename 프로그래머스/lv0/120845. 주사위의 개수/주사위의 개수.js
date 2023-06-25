@@ -1,4 +1,2 @@
-function solution(box, n) {
-    box[0] = ~~(box[0] /n);
-    return box.reduce((prev, curr) => prev * ~~(curr / n));
-}
+const solution = (box, n) => box.reduce((prev, curr) =>
+    prev * Math.floor(curr / n), 1);
