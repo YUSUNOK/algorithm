@@ -1,4 +1,5 @@
-function solution(numbers) {
-    numbers.sort((x,y) => x - y);
-    return Math.max(numbers[0] * numbers[1] , numbers[numbers.length -1] * numbers[numbers.length -2]);
+const solution = (numbers) => {
+    numbers.sort((x,y) => x-y);
+    const lastNumbers= numbers.slice(-2);
+    return Math.max(numbers[0] * numbers[1], lastNumbers[0] * lastNumbers[1]);
 }
