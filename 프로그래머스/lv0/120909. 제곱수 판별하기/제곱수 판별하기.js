@@ -1,3 +1,1 @@
-function solution(n) {
-    return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
-}
+const solution = (n) => Math.sqrt(n) === Math.floor(Math.sqrt(n)) ? 1 : 2;
