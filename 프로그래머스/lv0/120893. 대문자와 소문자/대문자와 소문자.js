@@ -1,3 +1,1 @@
-function solution(my_string) {
-    return [...my_string].map((x,i) => x.charCodeAt() >= 97 ? x.toUpperCase() : x.toLowerCase()).join("");
-}
+const solution = (my_string) => [...my_string].map(x => x.charCodeAt(0) >= 97 ? x.toUpperCase() : x.toLowerCase()).join('');
