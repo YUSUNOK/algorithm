@@ -1,3 +1,1 @@
-function solution(my_string, letter) {
-    return [...my_string].filter((x) => x !==letter).join("");
-}
+const solution = (my_string, letter) => [...my_string].filter(x => x !== letter).join('');
