@@ -1,3 +1,5 @@
-function solution(my_string) {
-    return [...my_string].map(x => +x).filter(x => !isNaN(x)).sort((x,y) => x-y);
-}
+const solution = (my_string) => 
+    [...my_string]
+    .filter(x => x.charCodeAt(0) >= 48 && x.charCodeAt(0) <= 57)
+    .sort()
+    .map(x => Number(x));
