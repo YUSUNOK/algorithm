@@ -1,3 +1,4 @@
-function solution(my_string) {
-    return [...my_string].filter(x => !(["a", "e", "i", "o", "u"].includes(x))).join("");
+const solution = (my_string) => {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    return [...my_string].filter(x => !vowels.includes(x)).join('');
 }
