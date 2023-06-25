@@ -1,8 +1,3 @@
-function solution(n) {
-     var answer = [];
-    for(let i =1; i <= n ; i+=2){
-        answer.push(i);
-    }
-   
-    return answer;
-}
+const solution = (n) => 
+    Array(Math.ceil(n/2)).fill(0)
+    .map((x, i) => 2*i+1);
