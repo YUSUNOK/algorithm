@@ -1,3 +1,1 @@
-function solution(money) {
-    return [~~(money / 5500), money % 5500];
-}
+const solution = (money) => [Math.trunc(money/5500), money % 5500];
