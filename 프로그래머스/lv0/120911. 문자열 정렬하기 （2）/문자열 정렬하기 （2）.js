@@ -1,3 +1,1 @@
-function solution(my_string) {
-    return [...my_string.toLowerCase()].sort().join("");
-}
+const solution = (my_string) => [...my_string].map(x => x.toLowerCase()).sort().join('');
