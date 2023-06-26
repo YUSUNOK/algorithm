@@ -1,12 +1,13 @@
-function solution(n) {
-    let answer = 0;
-    for(let i = 4 ; i <= n ; i++){
-        let count = 0;
-        for(let j = 1; j <= Math.sqrt(i) ; j++) {
-            if(j === Math.sqrt(i) && i % j === 0){ count += 1;}
-            if(i % j === 0){ count += 2;}
+const returnDivisors = (x) => {
+    const divisorsSet = new Set();
+    for(let i = 1; i <= Math.sqrt(x) ; i++){
+        if(x % i === 0){
+            divisorsSet.add(i);
+            divisorsSet.add(x / i);
         }
-        if(count >= 3){ answer += 1;}
     }
-    return answer;
+    return [...divisorsSet].length;
 }
+
+const solution = (n) => 
+    Array(n).fill(0).map((x, i) => returnDivisors(i+1)).filter(x => x >= 3).length;
