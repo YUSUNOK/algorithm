@@ -1,6 +1,7 @@
 const solution = (numbers, direction) => {
+    let copyNumbers = numbers.slice();
     direction === 'right' ?
-        numbers.unshift(numbers.pop()) :
-        numbers.push(numbers.shift());
-    return numbers;
+        copyNumbers.unshift(copyNumbers.pop()) :
+        copyNumbers.push(copyNumbers.shift());
+    return copyNumbers;
 }
