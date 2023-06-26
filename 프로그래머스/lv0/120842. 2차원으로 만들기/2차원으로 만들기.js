@@ -1,7 +1,6 @@
 const solution = (num_list, n) => {
     let answer = [];
-    const runCount = num_list.length / n;
-    for(let i = 0 ; i < runCount; i++)
+    while(num_list.length > 0)
         answer.push(num_list.splice(0, n));
     return answer;
 }
