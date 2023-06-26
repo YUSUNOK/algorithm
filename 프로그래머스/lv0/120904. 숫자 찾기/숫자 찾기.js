@@ -1,4 +1,1 @@
-const solution = (num, k) => {
-    const result = [...String(num)].indexOf(String(k));
-    return result < 0 ? result : result + 1;
-}
+const solution = (num, k) => ['dumyForIndexAddOne',...String(num)].indexOf(String(k));
