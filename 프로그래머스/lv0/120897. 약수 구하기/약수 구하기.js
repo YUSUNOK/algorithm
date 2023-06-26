@@ -1,3 +1,6 @@
-function solution(n) {
-    return Array(n).fill(0).map((x, i) => x = i+1).filter(x => n % x === 0);;
+const solution = (n) => {
+    let answer = [];
+    for(let i = 1; i <= n ; i++)
+        if(n % i === 0) answer.push(i);
+    return answer;
 }
