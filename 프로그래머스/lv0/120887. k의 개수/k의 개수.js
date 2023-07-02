@@ -1,6 +1,6 @@
-const solution = (i, j , k) => 
-    Array(j-i+1)
-    .fill(i)
-    .map((x, i) =>      
-        [...String(x+i)].filter(x => x === String(k)).length)
-    .reduce((prev, curr) => prev + curr);
+const solution = (i, j , k) => {
+    let sequenceStr = '';
+    for(let item = i ; item <= j ; item++)
+        sequenceStr += item;
+    return sequenceStr.split(k).length - 1;
+}
