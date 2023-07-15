@@ -1,5 +1,4 @@
-function solution(numbers) {
-    const engToNum = {
+const engMatchingNum = {
         'zero' : 0,
         'one' : 1,
         'two' : 2,
@@ -11,11 +10,12 @@ function solution(numbers) {
         'eight' : 8,
         'nine' : 9,
     }
-    const engArr = Object.keys(engToNum);
-    for(let eng of engArr){
-        if(numbers.includes(eng)){
-            numbers = numbers.replaceAll(eng, engToNum[eng]);
-        }
+
+const solution = (numbers) =>  {
+    const engArr = Object.keys(engMatchingNum);
+    for(let engKey of engArr){
+        if(numbers.includes(engKey))
+            numbers = numbers.replaceAll(engKey, engMatchingNum[engKey]);        
     }
     return Number(numbers);
 }
