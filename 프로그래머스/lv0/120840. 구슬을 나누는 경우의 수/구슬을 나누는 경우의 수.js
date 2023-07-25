@@ -1,13 +1,8 @@
-function factorial(n) {
-    if(n === 0) return 1;
+const factorial = (n) => {
+    if(n === 0 || n === 1) return 1;
     return n * factorial(n-1);
 }
 
-function solution(balls, share) {
-    if(balls === share) return 1;
-    let p = 1;
-    for(let i = 0 ; i< share ; i++){
-        p *= (balls - i);
-    }
-    return Math.round(p / factorial(share));
+const solution = (balls, share) => {
+    return Math.round(factorial(balls) / (factorial(share) * factorial(balls - share)));
 }
