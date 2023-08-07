@@ -1,45 +1,34 @@
-function solution(keyinput, board) {
-    const maxXabs = Math.floor(board[0] / 2);
-    const maxYabs = Math.floor(board[1] / 2);
-    
-    const countMap = new Map();
-    
-    countMap.set('x', 0);
-    countMap.set('y', 0);
-
-    for(let key of keyinput) {
-     switch(key) {
-      case 'left':  
-        if(countMap.get('x') === - maxXabs){
-            break;
-        }else{
-            countMap.set('x', countMap.get('x') - 1); 
-            break;
+const solution = (keyinput, board) => {
+    let result = [0,0];
+    const limitBoardAbs = [(board[0]-1)/2, (board[1]-1)/2];
+    for(let direction of keyinput) {
+        switch(direction) {
+            case 'left':
+                result[0]-=1;
+                if(result[0] < -limitBoardAbs[0]){
+                    result[0] = -limitBoardAbs[0];
+                }
+                break;
+                
+             case 'down':
+                result[1]-=1;
+                if(result[1] < -limitBoardAbs[1]){
+                    result[1] = -limitBoardAbs[1];
+                }
+                break;
+           case 'right':
+                result[0]+=1;
+                if(result[0] > limitBoardAbs[0]){
+                    result[0] = limitBoardAbs[0];
+                }
+                break;
+            case 'up':
+                result[1]+=1;
+                if(result[1] > limitBoardAbs[1]){
+                    result[1] = limitBoardAbs[1];
+                }
+                break;     
         }
-      case 'right': 
-        if(countMap.get('x') === maxXabs){
-            break;
-        }else{
-            countMap.set('x', countMap.get('x') + 1); 
-            break;
-        }
-      case 'up' :
-        if(countMap.get('y') === maxYabs){
-            break;
-        }else{
-            countMap.set('y', countMap.get('y') + 1); 
-            break;
-        }     
-      case 'down' :
-        if(countMap.get('y') === -maxYabs){
-            break;
-        }else{
-            countMap.set('y', countMap.get('y') -1); 
-            break;
-        }     
-     }
     }
-    const x_movement = countMap.get('x');
-    const y_movement = countMap.get('y');
-    return [x_movement, y_movement];
+    return result;
 }
