@@ -1,7 +1,5 @@
-function solution(id_pw, db) {
-    const dbMap = new Map(db);
-    if(dbMap.has(id_pw[0]) && dbMap.get(id_pw[0]) === id_pw[1]){
-        return "login";
-    }
-    return dbMap.has(id_pw[0]) ? "wrong pw" : "fail";
+const solution = (id_pw, db) => {
+    const idPwMap = new Map(db);
+    if(idPwMap.has(id_pw[0]) && idPwMap.get(id_pw[0]) === id_pw[1]) return 'login';
+    return !idPwMap.has(id_pw[0]) ? 'fail' : 'wrong pw';
 }
