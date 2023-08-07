@@ -1,3 +1,1 @@
-function solution(M, N) {
-    return M*N -1 ;
-}
+const solution = (M, N) => M*N - 1;
