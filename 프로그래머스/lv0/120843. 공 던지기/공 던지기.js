@@ -1,11 +1,14 @@
-function solution(numbers, k) { 
-    const evenItem = numbers.filter((x, i) => i % 2 === 0);
-    const oddItem = numbers.filter((x, i) => i % 2 !== 0);
-    if(numbers.length % 2 === 0) return evenItem[(k-1) % evenItem.length];
-    if(numbers.length % 2 !== 0) {
-        const newItem = evenItem.concat(oddItem);
-        return newItem[(k-1) % newItem.length];
+const solution = (numbers, k) => {
+    let index = 0;
+    for(let i = 1; i <= k ; i++) {
+        if(i === 1) continue;
+        index+=2;
+        if(index - (numbers.length - 1) === 1){
+            index = 0;
+        }
+         if(index - (numbers.length - 1) === 2){
+            index = 1;
+        }
     }
-    
-    
+    return numbers[index];
 }
