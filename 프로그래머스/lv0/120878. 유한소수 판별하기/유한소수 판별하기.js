@@ -1,17 +1,25 @@
-function solution(a, b) {
-    let smallValue = Math.min(a,b);
-    for(let i = 1 ; i <= smallValue ; i++) {
-        if(a % i === 0 && b % i === 0){
-            a = a / i;
-            b = b / i;
+const solution = (a, b) => {
+    const minValue = Math.min(a,b);
+    for(let i = 2; i <= minValue; i++) {
+        if(a % i === 0 && b % i === 0) {
+            a /= i;
+            b /= i;
         }
     }
-    while(b % 2 === 0){
-        b = b / 2;
+    while(true) {
+        if(b % 2 !== 0) {
+            break;
+        }else{
+            b /=2;
+        }
     }
     
-    while(b % 5 === 0){
-        b = b / 5;
+    while(true){
+        if(b % 5 !== 0) {
+            break;
+        }else{
+            b /=5;
+        }
     }
-    return b === 1 ? 1 : 2;    
-}
+    return b === 1 ? 1: 2;
+} 
