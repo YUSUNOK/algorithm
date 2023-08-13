@@ -6,20 +6,8 @@ const solution = (a, b) => {
             b /= i;
         }
     }
-    while(true) {
-        if(b % 2 !== 0) {
-            break;
-        }else{
-            b /=2;
-        }
-    }
+    while(b % 2 === 0) b /=2;    
+    while(b % 5 === 0) b /=5;  
     
-    while(true){
-        if(b % 5 !== 0) {
-            break;
-        }else{
-            b /=5;
-        }
-    }
     return b === 1 ? 1: 2;
 } 
