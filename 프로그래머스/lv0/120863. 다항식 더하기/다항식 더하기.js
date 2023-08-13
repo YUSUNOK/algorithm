@@ -1,31 +1,30 @@
-function solution(polynomial) {
-    let answerString = '';
-    const resultMap = new Map();
-    resultMap.set('x', 0);
-    resultMap.set('constant', 0);
-    const list = polynomial.split(' + ');
-    for(let item of list) {
-        if(item.includes('x')) {
-            item.slice(0, -1) === '' ? resultMap.set('x', resultMap.get('x') + 1) : resultMap.set('x', resultMap.get('x') + Number(item.slice(0, -1)));
+const solution = (polynomial) => {
+    let coefficientA = 0;
+    let constant = 0;
+    
+    let polynomialArr = polynomial.split(' + ');
+    
+    for(let element of polynomialArr) {
+        if(element.includes('x')) {
+            element = element.replace('x', '');
+            element === '' ? coefficientA += 1 :  coefficientA += Number(element);
         }else{
-            resultMap.set('constant', resultMap.get('constant') + Number(item));
+            constant += Number(element);
         }
     }
-    if(resultMap.get('x') !== 0){
-        if(resultMap.get('x') === 1){
-             answerString += 'x';
-        }else{
-            answerString += `${resultMap.get('x')}x`;
-        }
+    let aboutX;
+    switch(coefficientA) {
+        case 0: aboutX = ''; break;
+        case 1: aboutX = 'x'; break;
+        default : aboutX = `${coefficientA}x`; break;
     }
     
-    if(resultMap.get('constant') !== 0){
-        if(answerString.includes('x')){
-            answerString += ' + ';
-        }
-        answerString += `${resultMap.get('constant')}`;
-    }
-    return answerString;
-}
+    let resultArr = [aboutX, String(constant)];
 
-console.log(solution("x"));
+    if(resultArr[1] === '0') resultArr.pop();
+    
+    if(resultArr.length === 2 && aboutX !== ''){
+        resultArr.splice(1, 0, ' + ');
+    }
+    return resultArr.join('');
+}
