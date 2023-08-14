@@ -1,6 +1,11 @@
-function solution(array) {
-    let m = new Map();
-    for (let n of array) m.set(n, (m.get(n) || 0)+1);
-    m = [...m].sort((a,b)=>b[1]-a[1]);
-    return m.length === 1 || m[0][1] > m[1][1] ? m[0][0] : -1;
+const solution = (array) => {    
+    const frequencyValueMap = new Map();
+    array.forEach((element) => {
+        frequencyValueMap.set(element, (frequencyValueMap.get(element) + 1 || 1));
+    })
+    const frequencyValueArr = [...frequencyValueMap];
+    if(frequencyValueArr.length === 1) return frequencyValueArr[0][0];
+    frequencyValueArr.sort((x, y) => y[1] - x[1]);
+    if(frequencyValueArr[0][1] === frequencyValueArr[1][1]) return -1;
+    return frequencyValueArr[0][0];
 }
