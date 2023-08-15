@@ -1,7 +1,7 @@
-function solution(score) {
-    const plusScore = score.reduce((prev, curr) => {
-        return [...prev, curr[0] + curr[1]]
-    }, []);
-    const sortScore = plusScore.slice().sort((a,b) => b-a);
-    return plusScore.map((x) => sortScore.indexOf(x) + 1);
+const solution = (score) => {
+  const result = [];
+  const sumScore = score.map((scoresOfperson) => scoresOfperson[0] + scoresOfperson[1]);
+  const sortScore = sumScore.slice().sort((x, y) => y-x);
+  sumScore.forEach((score) => result.push(sortScore.indexOf(score) + 1));
+return result;
 }
