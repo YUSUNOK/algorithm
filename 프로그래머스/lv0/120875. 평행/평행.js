@@ -1,11 +1,13 @@
-function solution(dots) {
-    const slideObj = {};
-    for(let i = 0; i < 3; i++){
-        for(let j = i+1; j < 4; j++){
-            let key = (dots[i][1] - dots[j][1]) / (dots[i][0]-dots[j][0]);
-            slideObj[key] = (slideObj[key] || 0) + 1;
+const solution =(dots) => {
+    dots.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+    for(let i = 1; i <= 3 ; i++) {
+        let useIndex = [0, i];
+        let inclination = (dots[i][1] - dots[0][1]) / (dots[i][0] - dots[0][0]);
+        let remainArr = dots.filter((x, i) => !useIndex.includes(i));
+        let remainInclination = (remainArr[1][1] - remainArr[0][1]) / (remainArr[1][0] - remainArr[0][0]);
+        if(inclination === remainInclination) {
+            return 1;
         }
     }
-    const slideArr = Object.values(slideObj);
-    return (slideArr.includes(2) || slideArr.includes(6)) ? 1 : 0;
+    return 0;
 }
