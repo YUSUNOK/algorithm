@@ -1,5 +1,5 @@
-function solution(num_list) {
-    const gop = [...num_list].reduce((prev, curr) => prev * curr);
-    const hap_zegop = [...num_list].reduce((prev, curr) => prev + curr) ** 2;
-    return gop < hap_zegop ? 1 : 0;
+const solution = (num_list) => {
+    const gopValue = num_list.reduce((prev, curr) => prev * curr, 1);
+    const hapValue = num_list.reduce((prev, curr) => prev + curr, 0);
+    return gopValue < hapValue ** 2 ? 1 : 0;
 }
