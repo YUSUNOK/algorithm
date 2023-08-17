@@ -1,4 +1,3 @@
-function solution(a, b) {
-    let answer_list = [String(a) + String(b), String(b) + String(a)].map(x => Number(x)).sort((x,y) => y-x);
-    return answer_list[0];
+const solution = (a, b) => {
+    return Number(String(a) + String(b)) > Number(String(b) + String(a)) ? Number(String(a) + String(b)) :  Number(String(b) + String(a));
 }
