@@ -1,3 +1,11 @@
-function solution(myString, pat) {
-    return [...myString].map((x) => x === 'A' ? x = 'B' : x = 'A').join("").includes(pat) ? 1 : 0;
+const solution = (myString, pat) => {
+    let afterChanging = '';
+    const changeAB = {
+        'A': 'B',
+        'B': 'A',
+    }
+    for(let str of myString) {
+       afterChanging += changeAB[str];
+    }
+    return afterChanging.includes(pat) ? 1 : 0;
 }
