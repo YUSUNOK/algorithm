@@ -1,12 +1,11 @@
-function solution(n) {
-    let sum = 0;
-    for(let i =1 ; i <= Math.ceil(n/2) ; i++){
-        if(n % 2 === 1){
-            sum += 2 * i - 1;
-        }
-        else{
-            sum += ( 2 * i ) ** 2;
+const solution = (n) => {
+    let answer = 0;
+    for(let i = 1; i<= n; i+=2) {
+        if(n % 2 !== 0) {
+            answer += i;
+        }else{
+            answer += (i+1) ** 2;
         }
     }
-    return sum;
+    return answer;
 }
