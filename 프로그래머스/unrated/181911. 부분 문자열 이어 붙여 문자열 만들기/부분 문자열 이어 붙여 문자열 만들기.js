@@ -1,5 +1,3 @@
-function solution(my_strings, parts) {
-    let answer = "";
-    parts.forEach(([startIndex, endIndex], i) => answer += (my_strings[i].slice(startIndex, endIndex+1)));
-    return answer;
+const solution = (my_strings, parts) => {
+   return  my_strings.map((str, i) => str.substring(parts[i][0], parts[i][1] + 1)).join('');
 }
