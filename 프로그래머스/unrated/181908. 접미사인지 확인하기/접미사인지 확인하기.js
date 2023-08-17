@@ -1,4 +1,4 @@
-function solution(my_string, is_suffix) {
-    const reverseIs_suffix = [...is_suffix].reverse().join("");
-    return [...my_string].reverse().join("").indexOf(reverseIs_suffix) === 0 ? 1 : 0;
+const solution = (my_string, is_suffix) => {
+    let startIndex = my_string.lastIndexOf(is_suffix);
+    return my_string.substring(startIndex) === is_suffix ? 1 : 0;
 }
