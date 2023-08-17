@@ -1,3 +1,3 @@
-function solution(arr) {
-    return arr.reduce((list, curr) => [...list, ...Array(curr).fill(curr)], []);
+const solution = (arr) => {
+   return arr.reduce((prev, curr) => [...prev, ...Array(curr).fill(curr)], []);
 }
