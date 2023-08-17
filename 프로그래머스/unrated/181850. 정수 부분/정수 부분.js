@@ -1,3 +1,3 @@
-function solution(flo) {
-    return ~~flo;
+const solution = (flo) => {
+    return Math.floor(flo);
 }
