@@ -1,3 +1,3 @@
-function solution(start, end) {
-    return Array.from(Array(start - end + 1), (_, i) => start - i);
+const solution = (start, end) => {
+    return Array(start - end + 1).fill(start).map((x, i) => x-i);
 }
