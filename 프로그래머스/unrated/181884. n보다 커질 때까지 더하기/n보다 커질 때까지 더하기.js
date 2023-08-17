@@ -1,7 +1,7 @@
-function solution(numbers, n) {
-    let answer =0;
-    for(let i =0; i < numbers.length && answer <= n ; i++){
-        answer += numbers[i];
+const solution = (numbers, n) => {
+    let answer = 0;
+    for(let number of numbers) {
+        answer += number;
+        if(answer > n) return answer;
     }
-    return answer;
 }
