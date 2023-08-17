@@ -1,3 +1,4 @@
-function solution(num_list) {
-    return num_list.sort((x, y) => x - y).splice(0, 5);
+const solution = (num_list) => {
+    num_list.sort((x, y) => x - y);
+    return num_list.slice(0, 5);
 }
