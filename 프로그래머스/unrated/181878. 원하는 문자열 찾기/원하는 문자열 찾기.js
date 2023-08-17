@@ -1,3 +1,3 @@
-function solution(myString, pat) {
-    return myString.toLowerCase().includes(pat.toLowerCase()) ? 1 : 0;
+const solution = (myString, pat) => {
+    return myString.toUpperCase().includes(pat.toUpperCase()) ? 1 : 0;
 }
