@@ -1,3 +1,3 @@
-function solution(my_string, index_list) {
-    return index_list.map(x => my_string[x]).join("");
+const solution = (my_string, index_list) => {
+    return index_list.map((x) => my_string[x]).join('');
 }
