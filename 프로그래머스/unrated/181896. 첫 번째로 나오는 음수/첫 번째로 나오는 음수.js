@@ -1,4 +1,6 @@
-function solution(num_list) {
-   // 조건에 부합하는 첫번째 인덱스를 추출 : findIndex
-    return num_list.findIndex((x) => x < 0);
+const solution = (num_list) => {
+    for(let i = 0; i < num_list.length; i++) {
+        if(num_list[i] < 0) return i;
+    }
+    return -1;
 }
