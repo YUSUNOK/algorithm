@@ -1,5 +1,8 @@
-function solution(num_list) {
-    const odd = parseInt(num_list.filter(x => x % 2 === 1).join(""));
-    const even = parseInt(num_list.filter(x => x % 2 === 0).join(""));
-    return odd + even;
+const solution = (num_list) => {
+    let evenValue = ''
+    let oddValue = '';
+    num_list.forEach((x) => {
+        x % 2 === 0 ? evenValue += String(x) : oddValue += String(x);
+    })
+    return Number(evenValue) + Number(oddValue);
 }
