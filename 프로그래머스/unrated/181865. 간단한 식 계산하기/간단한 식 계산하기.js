@@ -1,9 +1,8 @@
-function solution(binomial) {
-    const [a, op, b] = binomial.split(" ");
-    const formulaObj = {
-        '+' : parseInt(a) + parseInt(b),
-        '-' : parseInt(a) - parseInt(b),
-        '*' : parseInt(a) * parseInt(b),
+const solution = (binomial) => {
+    const binomialArr = binomial.split(' ');
+    switch(binomialArr[1]) {
+        case '+' : return Number(binomialArr[0]) + Number(binomialArr[2]); 
+        case '-' : return Number(binomialArr[0]) - Number(binomialArr[2]); 
+        default : return Number(binomialArr[0]) * Number(binomialArr[2]); 
     }
-    return formulaObj[op];
 }
