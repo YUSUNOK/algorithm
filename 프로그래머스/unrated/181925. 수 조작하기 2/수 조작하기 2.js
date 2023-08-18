@@ -1,14 +1,15 @@
-function solution(numLog) {
+const solution = (log) => {
     let answer = '';
-    const mathObj = {
-        '1' : 'w',
-        '-1' : 's',
-        '10' : 'd',
-        '-10' : 'a'
-    }
-    for(let i = 1; i <= numLog.length - 1 ; i++){
-        const index = String(numLog[i] - numLog[i - 1]);
-        answer += mathObj[index];
+    const calculationMap = new Map([
+        [1, 'w'], 
+        [-1, 's'],
+        [10, 'd'],
+        [-10, 'a']
+    ]);
+    
+    for(let i = 0; i < log.length - 1; i++) {
+        let myKey = log[i+1] - log[i];
+        answer += calculationMap.get(myKey);
     }
     return answer;
 }
