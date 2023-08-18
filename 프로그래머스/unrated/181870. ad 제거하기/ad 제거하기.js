@@ -1,3 +1,3 @@
-function solution(strArr) {
-    return strArr.filter(x => !x.includes("ad"));
+const solution = (strArr) => {
+   return strArr.filter((str) => !str.includes('ad'));
 }
