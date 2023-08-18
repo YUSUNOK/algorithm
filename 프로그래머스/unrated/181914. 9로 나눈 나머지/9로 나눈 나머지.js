@@ -1,3 +1,7 @@
-function solution(number) {
-    return [...number].reduce((prev, curr) => Number(prev) + Number(curr)) % 9;
+const solution = (number) => {
+    let sum = 0;
+    for(let strNum of number) {
+       sum += Number(strNum);
+    }
+    return sum % 9;
 }
