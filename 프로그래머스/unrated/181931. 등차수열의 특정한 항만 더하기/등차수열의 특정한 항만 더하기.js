@@ -1,6 +1,7 @@
-function solution(a, d, included) {
-    const indexListToSum =included.map((x, i) => x === true ? i : "").filter((x) => x !== "");
+const solution = (a, d, included) => {
     let answer = 0;
-    indexListToSum.forEach(x => answer += a +(x * d));
-    return answer ;
+    for(let i = 0; i < included.length; i++) {
+        if(included[i]) answer += a + i*d;
+    }
+    return answer;
 }
