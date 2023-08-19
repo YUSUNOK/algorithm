@@ -1,3 +1,10 @@
-function solution(intStrs, k, s, l) {
-    return intStrs.map((x) => Number(x.substring(s, s+l))).filter(x => x > k);
+const solution = (intStrs, k, s, l) => {
+    let answer = [];
+    for(let intStr of intStrs) {
+       let filterNumber = Number(intStr.substring(s, s+l));
+       if(filterNumber > k) {
+           answer.push(filterNumber);
+       }
+    }
+    return answer;
 }
