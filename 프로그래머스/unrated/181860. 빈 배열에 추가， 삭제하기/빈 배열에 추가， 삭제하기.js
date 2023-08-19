@@ -1,15 +1,11 @@
-function solution(arr, flag) {
-    var answer = [];
-    for(let i =0; i < flag.length ; i++) {
-        if(flag[i]) {
-            for(let j =0; j < arr[i] * 2; j++){
-                answer.push(arr[i]);
-            }
+const solution = (arr, flag) => {
+    let X = [];
+    flag.forEach((booleanValue, i) => {
+        if(booleanValue) {
+            X.push(...Array(arr[i]*2).fill(arr[i]));
         }else{
-             for(let j =0; j < arr[i]; j++){
-                answer.pop();
-            }
+           X = X.slice(0, X.length - arr[i]);
         }
-    }
-    return answer;
+    })
+    return X;
 }
