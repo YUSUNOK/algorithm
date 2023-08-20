@@ -1,5 +1,6 @@
-function solution(arr) {
+const solution = (arr) => {
     const startIndex = arr.indexOf(2);
-    const endIndex = arr.lastIndexOf(2);
-    return startIndex === -1 ? [-1] : arr.splice(startIndex, endIndex - startIndex + 1);
+    if(startIndex === -1) return [-1];
+    const lastIndex = arr.lastIndexOf(2);
+    return arr.slice(startIndex, lastIndex+1);    
 }
