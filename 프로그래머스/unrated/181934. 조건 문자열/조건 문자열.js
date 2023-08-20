@@ -1,9 +1,7 @@
-function solution(ineq, eq, n, m) {
-    let answer = 0;
-    if(eq === '='){
-        answer = ineq === '>' ? n >= m : n <= m; 
+const solution = (ineq, eq, n, m) => {
+    if(eq === '!') {
+        return ineq === '>' ? Number(n > m) : Number(n < m);
     }else{
-         answer = ineq === '>' ? n > m : n < m; 
+        return ineq === '>' ? Number(n >= m) : Number(n <= m);   
     }
-    return Number(answer);
 }
