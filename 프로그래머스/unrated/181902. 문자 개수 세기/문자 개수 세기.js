@@ -1,11 +1,10 @@
 const solution = (my_string) => {
+    let result = Array(52).fill(0);
     let my_stringArr = [...my_string];
-    const alphabetCountMap = new Map();
-    for(let alphaNumber = 65; alphaNumber <= 90; alphaNumber++) {
-        alphabetCountMap.set(String.fromCharCode(alphaNumber), my_stringArr.filter((x) => x === String.fromCharCode(alphaNumber)).length);
+    let alphabetStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    for(let i = 0; i < alphabetStr.length; i++) {
+        let addValue = my_stringArr.filter((x) => x === alphabetStr[i]).length;
+        result[i] = addValue;
     }
-    for(let alphaNumber = 97; alphaNumber <= 122; alphaNumber++) {
-        alphabetCountMap.set(String.fromCharCode(alphaNumber), my_stringArr.filter((x) => x === String.fromCharCode(alphaNumber)).length);
-    } 
-    return [...alphabetCountMap].map((x) => x[1]);
+   return result;
 }
