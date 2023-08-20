@@ -1,7 +1,11 @@
-function solution(myString, pat) {
-   return [...myString].reduce((acc, curr, idx) => {
-      const curStr = myString.slice(idx, pat.length + idx);
-      if(curStr === pat) return acc + 1;
-       return acc;
-   },0)
+const solution = (myString, pat) => {
+    let count = 0;
+    if(!myString.includes(pat)) return 0;
+    for(let i = myString.indexOf(pat); i < myString.length ; i++) {
+        let substr = myString.substring(i, i+pat.length);
+        if(substr === pat) {
+            count++;
+        } 
+    }
+    return count;
 }
