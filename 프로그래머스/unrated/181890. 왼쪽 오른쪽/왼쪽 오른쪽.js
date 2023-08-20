@@ -1,9 +1,19 @@
-function solution(str_list) {
-    const lIndex = str_list.indexOf('l');
-    const rIndex = str_list.indexOf('r');
+const solution = (str_list) => {
+    const lFirstIndex = str_list.indexOf('l');
+    const rFirstIndex = str_list.indexOf('r');
     
-    if(lIndex === -1 && rIndex === -1) return [];
-    if(lIndex === -1 && rIndex !== -1) return str_list.slice(rIndex + 1);
-    if(lIndex !== -1 && rIndex === -1) return str_list.slice(0, lIndex);
-    return lIndex < rIndex ? str_list.slice(0, lIndex) : str_list.slice(rIndex + 1);
+    if(lFirstIndex === -1 && rFirstIndex === -1) return [];
+    if(lFirstIndex !== -1 && rFirstIndex !== -1) {
+        if(lFirstIndex < rFirstIndex) {
+           return str_list.slice(0, lFirstIndex);
+        }else{
+            return str_list.slice(rFirstIndex + 1);
+        }
+    }else{
+        if(lFirstIndex !== -1) {
+            return str_list.slice(0, lFirstIndex);
+        }else{
+            return str_list.slice(rFirstIndex + 1);
+        }
+    }
 }
