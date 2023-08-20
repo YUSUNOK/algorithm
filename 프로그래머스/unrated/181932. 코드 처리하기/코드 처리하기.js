@@ -1,17 +1,13 @@
-function solution(code) {
-    let answer = "";
-    let mode = false;
-    for(let i = 0; i < code.length ; i++){
-        if(code[i] === '1'){
-            mode = !mode;
+const solution = (code) => {
+    let ret = '';
+    let mode = 0;
+    for(let idx = 0; idx< code.length; idx++) {
+        if(code[idx] === '1') {
+            mode = 1 - Math.abs(mode);
             continue;
         }
-        if(!mode && i % 2 === 0){
-            answer += code[i];
-        }
-        if(mode && i % 2 === 1){
-            answer += code[i];
-        }
+        if(mode === 0 && idx % 2 === 0) ret += code[idx];
+        if(mode === 1 && idx % 2 !== 0) ret += code[idx];
     }
-    return answer.length ? answer : 'EMPTY';
+    return ret === '' ? 'EMPTY' : ret;
 }
