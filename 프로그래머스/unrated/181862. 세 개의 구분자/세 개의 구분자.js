@@ -1,4 +1,7 @@
-function solution(myStr) {
-    const result = myStr.replaceAll(/[abc]/g, ".").split('.').filter(x => x);
-    return result.length === 0 ? ["EMPTY"] : result ;
+const solution = (myStr) => {
+    myStr = myStr.replaceAll('a', ' ');
+    myStr = myStr.replaceAll('b', ' ');
+    myStr = myStr.replaceAll('c', ' ');
+    let resultArr = myStr.split(' ').filter(x => x);
+    return resultArr.length === 0 ? ['EMPTY'] : resultArr;
 }
