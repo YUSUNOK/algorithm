@@ -1,22 +1,20 @@
-function solution(a, b, c, d) {
-   const map1 = new Map();
-    for(data of [a,b,c,d]){
-        map1.set(data, (map1.get(data) || 0) + 1);
+const solution = (a, b, c, d) => {
+    const keyValueMap = new Map();
+    
+    [a, b, c, d].forEach((x) => {
+        keyValueMap.set(x, (keyValueMap.get(x) || 0) +1);
+    })
+    if([...keyValueMap].length === 1) return 1111 * a;
+    if([...keyValueMap].length === 4) return Math.min(a, b, c, d);
+    if([...keyValueMap].length === 3) {
+       return [...keyValueMap].filter((x, i) => x[1] === 1).reduce((prev, curr) => prev * curr[0], 1);  
     }
-    if(map1.size === 4) return [...map1].sort((x,y) => x[0]-y[0])[0][0];
-    if(map1.size === 1) return [...map1][0][0] * 1111;
-    if(map1.size === 3) return [...map1].map(([x, y]) => y === 1 ? x : null).filter(x => x).reduce((prev, curr) => prev * curr);
-    const findValue3 = [...map1].map(([x, y]) => y).indexOf(3);
-    if(findValue3 === -1) {
-       return [...map1].map(([x, y]) => x).reduce((prev, curr) => prev + curr) * Math.abs([...map1].map(([x, y]) => x).reduce((prev, curr) => prev - curr))
+    if([...keyValueMap].length === 2) {
+        if([...keyValueMap].filter((x, i) => x[1] === 2).length) {
+            return ([...keyValueMap][0][0] + [...keyValueMap][1][0]) * Math.abs ([...keyValueMap][0][0] - [...keyValueMap][1][0]);
+        }else{
+            let sortArr = [...keyValueMap].sort((x, y) => y[1] - x[1]);
+            return (10 * sortArr[0][0] + sortArr[1][0]) ** 2;
+        }
     }
-    let answer = 0;
-    [...map1].forEach((x, i) => i === findValue3 ? answer += 10 * x[0] : answer += x[0]);
-    return answer ** 2;
-    
-   
-    
-    
-        
-    
 }
