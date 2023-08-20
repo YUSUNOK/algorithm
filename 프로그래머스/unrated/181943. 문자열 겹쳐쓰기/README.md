@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.07 ms
+메모리: 33.5 MB, 시간: 0.09 ms
 
 ### 구분
 
@@ -60,7 +60,7 @@ Empty
 <p>입출력 예 #1</p>
 
 <ul>
-<li>예제 1번의 <code>my_string</code>에서 인덱스 10부터 <code>overwrite_string</code>의 길이만큼에 해당하는 부분은 "11oWor1"이고 이를 "lloWorl"로 바꾼 "HelloWorld"를 return 합니다.</li>
+<li>예제 1번의 <code>my_string</code>에서 인덱스 2부터 <code>overwrite_string</code>의 길이만큼에 해당하는 부분은 "11oWor1"이고 이를 "lloWorl"로 바꾼 "HelloWorld"를 return 합니다.</li>
 </ul>
 
 <p>입출력 예 #2</p>
