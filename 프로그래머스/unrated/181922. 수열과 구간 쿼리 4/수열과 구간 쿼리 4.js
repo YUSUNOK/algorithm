@@ -1,7 +1,12 @@
-function solution(arr, queries) {
-    let answer = arr.slice(0);
-    for(let [s,e,k] of queries){
-       answer = answer.map((x, i) => i >= s && i <= e && i % k === 0 ? x+1 : x);
-    }
-    return answer;
+const solution = (arr, queries) => {
+    arr = arr.map((x, i) => {
+        let addValue = 0;
+        for(let query of queries) {
+            if(i >= query[0] && i <= query[1] && i % query[2] === 0) {
+                addValue++;
+            }
+        }
+        return x+addValue;
+    })
+    return arr;
 }
