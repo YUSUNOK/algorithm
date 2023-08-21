@@ -1,4 +1,7 @@
-function solution(price, money, count) {
-    const needPrice = count * (1 + count) * price / 2 ;
-    return needPrice > money ? needPrice - money : 0 ;
+const solution = (price, money, count) => {
+    let totalPrice = 0;
+    for(let i = 1; i <= count; i++) {
+        totalPrice += price * i;
+    }
+    return money >= totalPrice ? 0 : totalPrice - money;
 }
