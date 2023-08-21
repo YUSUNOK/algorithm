@@ -1,3 +1,3 @@
-function solution(numbers) {
-    return 45 - numbers.reduce((prev, curr) => prev + curr);
+const solution = (numbers) => {
+    return 45 - numbers.reduce((prev, curr)=> prev + curr, 0);
 }
