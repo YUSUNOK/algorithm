@@ -1,14 +1,10 @@
-function solution(num) {
-    if(num === 1) return 0;
-    let count = 0;
-    for(let i = 0; i < 500; i++){
-        num % 2 === 0 ? num  = num / 2 : num = num * 3 + 1;
-        count++;
-        if(num === 1){
-            return count;
-        }
+const solution = (n) => {
+    if(n === 1) return 0;
+    for (let i = 1; i <= 500; i++) {
+        if(n % 2 === 0) n /= 2;
+        else n = n*3 + 1;
+        
+        if(n === 1) return i;
     }
-    if(num !== 1){
-        return -1;
-    }
+    return -1;
 }
