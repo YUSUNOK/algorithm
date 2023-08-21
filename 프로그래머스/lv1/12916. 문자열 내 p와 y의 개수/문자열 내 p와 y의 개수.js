@@ -1,12 +1,6 @@
-function solution(s){
-    let countObj = {};
-    for(let str of s.toLowerCase()){
-        if(str === 'p'){
-            countObj['p'] =  (countObj['p'] || 0) + 1;
-        }
-        if(str === 'y'){
-            countObj['y'] =  (countObj['y'] || 0) + 1;
-        }
-    }  
-    return countObj['p'] === countObj['y'];
+const solution = (s) => {
+    let upperArr = [...s.toUpperCase()];
+    const pCount = upperArr.filter(x => x === 'P').length;
+    const yCount = upperArr.filter(x => x === 'Y').length;
+    return pCount === yCount;
 }
