@@ -1,7 +1,8 @@
-function solution(x, n) {
+const solution = (x, n) => {
     let answer = [];
-    for(let i =0; i < n; i++){
-        answer.length === 0 ? answer.push(x) : answer.push(answer[answer.length -1] + x);
+    //an = x + (n-1)x;
+    for(let i = 1; i <= n; i++) {
+        answer.push(x + (i-1)*x);
     }
     return answer;
 }
