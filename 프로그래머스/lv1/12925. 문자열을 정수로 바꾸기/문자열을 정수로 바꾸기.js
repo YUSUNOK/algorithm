@@ -1,3 +1,3 @@
-function solution(s) {
-    return s/1;
+const solution = (s) => {
+    return Number(s);
 }
