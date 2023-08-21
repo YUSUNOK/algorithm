@@ -1,3 +1,3 @@
-function solution(n) {
-    return [...String(n)].map(x=> Number(x)).reverse();
+const solution = (n) => {
+    return [...String(n)].map(x => Number(x)).reverse();
 }
