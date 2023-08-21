@@ -1,3 +1,6 @@
-function solution(absolutes, signs) {
-    return absolutes.reduce((prev, curr, i) => signs[i] ? prev + curr : prev - curr, 0);
+const solution = (absolutes, signs) => {
+    return absolutes.reduce((prev, curr, i) => {
+        if(!signs[i]) curr = -curr;
+        return prev + curr;
+    }, 0);
 }
