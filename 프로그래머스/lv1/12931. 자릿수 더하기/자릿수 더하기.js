@@ -1,4 +1,3 @@
-function solution(n)
-{
-    return [...String(n)].map(x => parseInt(x)).reduce((prev, curr) => prev + curr, 0);
+const solution = (N) => {
+    return [...String(N)].reduce((prev, curr) => prev + Number(curr), 0);
 }
