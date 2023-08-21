@@ -1,3 +1,5 @@
-function solution(s) {
-    return [...s].filter(x => isNaN(Number(x))).length === 0 && (s.length === 4 || s.length === 6) ? true : false;
+const solution = (s) => {
+    const strLength = s.length;
+    const allNumberBoolean = [...s].filter((x) => Number.isInteger(Number(x))).length === s.length;
+    return allNumberBoolean && (strLength === 4 || strLength === 6);
 }
