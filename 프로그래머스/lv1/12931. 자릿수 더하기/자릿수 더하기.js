@@ -1,3 +1,9 @@
 const solution = (N) => {
-    return [...String(N)].reduce((prev, curr) => prev + Number(curr), 0);
+    let answer = 0;
+    const loop = String(N).length;
+    for(let i = 0; i < loop ; i++) {
+        answer += N % 10;
+        N = Math.floor(N/10);
+    }
+    return answer;
 }
