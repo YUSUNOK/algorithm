@@ -1,6 +1,7 @@
 const solution = (s) => {
-    let upperArr = [...s.toUpperCase()];
-    const pCount = upperArr.filter(x => x === 'P').length;
-    const yCount = upperArr.filter(x => x === 'Y').length;
-    return pCount === yCount;
+    const upperCaseArrOfS = Array.from(s.toUpperCase());
+    const countP = upperCaseArrOfS.filter(x => x === 'P').length;
+    const countY = upperCaseArrOfS.filter(x => x === 'Y').length;
+    
+    return countP === countY;
 }
