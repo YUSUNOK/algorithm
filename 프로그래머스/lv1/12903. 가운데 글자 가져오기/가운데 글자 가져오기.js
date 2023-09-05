@@ -1,4 +1,6 @@
 const solution = (s) => {
-    const index = Math.floor(s.length/2);
-    return s.length % 2 === 0 ? s.substring(index-1, index+1) : s[index];
+    const findIndex = Math.floor(s.length / 2);
+    const isEven = s.length % 2 === 0;
+    return isEven ? s.slice(findIndex -1, findIndex +1) : s[findIndex];
+    
 }
