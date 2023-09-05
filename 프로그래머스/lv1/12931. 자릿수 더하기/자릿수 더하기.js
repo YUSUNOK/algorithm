@@ -1,7 +1,6 @@
 const solution = (N) => {
     let answer = 0;
-    const loop = String(N).length;
-    for(let i = 0; i < loop ; i++) {
+    while(N !== 0) {
         answer += N % 10;
         N = Math.floor(N/10);
     }
