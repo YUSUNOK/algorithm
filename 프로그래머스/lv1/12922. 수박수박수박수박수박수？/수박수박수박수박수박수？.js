@@ -1,4 +1,4 @@
 const solution = (n) => {
-    let answer = '수박'.repeat(Math.floor(n / 2));
-    return n % 2 === 1 ? answer += '수' : answer;
+    const isEven = n % 2 === 0;
+    return isEven ? '수박'.repeat(n / 2) : '수박'.repeat(n / 2 - 0.5)+'수';
 }
