@@ -1,8 +1,9 @@
 const solution = (n) => {
-    let x = 2;
-    while (true) {
-        if (n % x === 1) break;
-        x++;
+    let i = 2;
+    while(true) {
+        if(n % i === 1){
+            return i;
+        }
+        i++;
     }
-    return x;
 }
