@@ -1,14 +1,15 @@
 const solution = (s) => {
-    // "())(()"
-    let arr = [...s];
-    if(arr[0] === ')' || arr[arr.length-1] === '(') return false;
     let stack = [];
-    arr.forEach((x, i) => {
-        if(stack[stack.length -1] !== x && stack[stack.length -1] === '(') {
-            stack.pop();
-        }else{
-            stack.push(x);
+    for (let i = 0; i < s.length; i++) {
+        if(s[i] === '(') {
+            stack.push(s[i]);
+        }else {
+            if(stack[stack.length -1] === '(') {
+                stack.pop();
+            }else {
+                stack.push(s[i]);
+            }
         }
-    })
+    }
     return stack.length === 0 ? true : false;
 }
