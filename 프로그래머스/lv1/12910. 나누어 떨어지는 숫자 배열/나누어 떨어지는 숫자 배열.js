@@ -1,4 +1,4 @@
 const solution = (arr, divisor) => {
-    const resultArr = arr.filter(element => element % divisor === 0).sort((x,y) => x-y);
-    return resultArr.length ? resultArr : [-1];
+    const filterArr = arr.filter(x => x % divisor === 0);
+    return filterArr.length === 0 ? [-1] : filterArr.sort((x, y) => x - y);
 }
