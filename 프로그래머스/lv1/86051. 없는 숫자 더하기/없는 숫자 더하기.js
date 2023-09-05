@@ -1,3 +1,5 @@
 const solution = (numbers) => {
-    return 45 - numbers.reduce((prev, curr)=> prev + curr, 0);
+    const totalSum = 9 * 10 / 2;
+    const numbersSum = numbers.reduce((prev, curr) => prev + curr, 0);
+    return totalSum - numbersSum;
 }
