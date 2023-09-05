@@ -1,6 +1,6 @@
 const solution = (absolutes, signs) => {
     return absolutes.reduce((prev, curr, i) => {
-        if(!signs[i]) curr = -curr;
-        return prev + curr;
+        const isMinus = !signs[i];
+        return isMinus ? prev - curr : prev + curr
     }, 0);
 }
