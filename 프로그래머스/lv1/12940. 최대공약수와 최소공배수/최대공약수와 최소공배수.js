@@ -1,18 +1,19 @@
 const solution = (n, m) => {
-    let valueOne;
-    let valueTwo;
-    for(let i = Math.min(m,n); i >= 1; i--) {
+    let answer = [];
+
+    for(let i = Math.min(n, m); i >= 1; i--){
         if(n % i === 0 && m % i === 0) {
-            valueOne = i;
+            answer.push(i);
+            break;
+        }
+    }
+
+      for(let i = Math.max(n, m); i <= n*m; i++){
+        if(i % n === 0 && i % m === 0) {
+            answer.push(i);
             break;
         }
     }
     
-    for(let i = Math.max(m,n); i<= m * n; i++) {
-        if(i % m === 0 && i % n === 0) {
-            valueTwo = i;
-            break;
-        }
-    }
-    return [valueOne, valueTwo];
+    return answer;
 }
