@@ -1,5 +1,14 @@
 const solution = (s) => {
-    return s.split(' ').map((str) => {
-        return [...str].map((x, i)=> i % 2 === 0 ? x.toUpperCase(): x.toLowerCase()).join('');
-    }).join(' ');
+    const wordsArr = s.split(' ');
+    const changeUpDownArr = wordsArr.map((word) => {
+        return [...word].map((str, i) => {
+            if(i % 2 === 0) {
+                return str.toUpperCase();
+            }else {
+                return str.toLowerCase();
+            }
+        }).join('');
+    })
+    
+    return changeUpDownArr.join(' ');
 }
