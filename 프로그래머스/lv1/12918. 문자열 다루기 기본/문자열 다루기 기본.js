@@ -1,5 +1,7 @@
 const solution = (s) => {
-    const strLength = s.length;
-    const allNumberBoolean = [...s].filter((x) => Number.isInteger(Number(x))).length === s.length;
-    return allNumberBoolean && (strLength === 4 || strLength === 6);
+    const filterArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    const sLength = s.length;
+    if(!(sLength === 4 || sLength === 6)) return false;
+    const fiterSLength = [...s].filter((x) => filterArr.includes(x)).length;
+    return sLength === fiterSLength ? true: false;
 }
