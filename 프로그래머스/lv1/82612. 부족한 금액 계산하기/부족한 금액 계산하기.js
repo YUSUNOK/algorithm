@@ -1,7 +1,4 @@
 const solution = (price, money, count) => {
-    let totalPrice = 0;
-    for(let i = 1; i <= count; i++) {
-        totalPrice += price * i;
-    }
-    return money >= totalPrice ? 0 : totalPrice - money;
+    const pay = Array(count).fill(price).reduce((prev, curr, i) => prev + curr * (i+1), 0);
+    return money > pay ? 0 : pay - money;
 }
