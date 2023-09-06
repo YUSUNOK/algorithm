@@ -1,3 +1,4 @@
 const solution = (n) => {
-   return parseInt([...n.toString(3)].reverse().join(''), 3);
+    const strReverseN = [...n.toString(3)].reverse().join('');
+    return Number.parseInt(strReverseN, 3);
 }
